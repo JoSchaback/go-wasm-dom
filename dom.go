@@ -13,6 +13,9 @@ var Document = js.Global().Get("document")
 // Body caches the global <body> element
 var Body = Document.Get("body")
 
+// Performance caches the global performance object.
+var Performance = Document.Get("performance")
+
 // Log prints the provided message string to the browser console.
 func Log(msg string) {
 	consoleHandle.Call("log", msg)
@@ -69,4 +72,8 @@ func FullPageCanvas() HTMLElement {
 	canvas.SetStyle("width:100%;height:100%;margin 0;padding 0;position:absolute")
 
 	return canvas
+}
+
+func PerformanceNow() float64 {
+	return Performance.Call("now").Float()
 }
