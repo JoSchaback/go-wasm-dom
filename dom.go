@@ -14,7 +14,7 @@ var Document = js.Global().Get("document")
 var Body = Document.Get("body")
 
 // Performance caches the global performance object.
-var Performance = Document.Get("performance")
+var Performance = js.Global().Get("performance")
 
 // Log prints the provided message string to the browser console.
 func Log(msg string) {
